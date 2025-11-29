@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOTY Contenders 2025 | El Santuario de los Videojuegos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">GOTY 2025 HUB</div>
+        <nav class="main-nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#juegos">Nominados</a>
+            <a href="#comentarios">Comunidad</a>
+            <button id="login-btn" class="login-btn">Iniciar Sesión</button>
+        </nav>
+    </header>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Acceso de Jugador</h2>
+            <form id="login-form">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" required><br>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required><br>
+                <button type="submit">Entrar al Servidor</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        
+        <section id="inicio" class="hero-section">
+            <div class="carousel-container">
+                <div class="carousel-slide" data-game="silksong">
+                    <img src="img/hollow-knight-banner.jpg" alt="Banner de Hollow Knight: Silksong">
+                </div>
+                <div class="carousel-slide" data-game="hades">
+                    <img src="img/hades-ii-banner.jpg" alt="Banner de Hades II">
+                </div>
+                <div class="carousel-slide" data-game="death-stranding">
+                    <img src="img/death-stranding-2-banner.jpg" alt="Banner de Death Stranding 2">
+                </div>
+                <div class="carousel-slide" data-game="death-stranding">
+                    <img src="img/Clair-Obscur-1-e1746553033231.jpg" alt="Clair Obscur: Expedition 33 Banner">
+                </div>
+                <button class="carousel-btn prev">◀</button>
+                <button class="carousel-btn next">▶</button>
+            </div>
+            <article class="hero-text">
+                <h1>🏆 La Batalla por el GOTY 2025</h1>
+                <p>Explora a profundidad los títulos nominados. ¡Elige a tu campeón!</p>
+            </article>
+        </section>
+
+        <section id="juegos" class="games-grid">
+            <h2 style="text-align: center;">✨ NOMINADOS OFICIALES ✨</h2>
+            
+            <article id="silksong" class="game-section">
+                <h3>Hollow Knight: Silksong</h3>
+                <p>El desafío de Hornet continúa en un nuevo reino. Plataformas 2D con un estilo de arte inigualable.</p>
+                <aside>
+                    <h4>Ficha Técnica</h4>
+                    <ul>
+                        <li>Género: Metroidvania, Acción.</li>
+                        <li>**Desarrollador:** Team Cherry.</li>
+                    </ul>
+                </aside>
+            </article>
+
+            <article id="expedition" class="game-section">
+                <h3>Clair Obscur: Expedition 33</h3>
+                <p>Un RPG con combate por turnos y una narrativa rica ambientada en un mundo de fantasía oscura.</p>
+            </article>
+
+            <article id="death-stranding-2" class="game-section">
+                <h3>Death Stranding 2: On The Beach</h3>
+                <p>La siguiente entrega del "Walking Simulator" más ambicioso de Hideo Kojima. Conexión y nuevas amenazas.</p>
+            </article>
+            
+            <article id="donkey-kong" class="game-section">
+                <h3>Donkey Kong Bananza</h3>
+                <p>El regreso del gorila a las plataformas 3D con un giro rítmico. ¡Es hora de la diversión Bananza!</p>
+            </article>
+            
+            <article id="hades-ii" class="game-section">
+                <h3>Hades II</h3>
+                <p>Melinoë toma el relevo. Más acción *roguelike* con la narrativa y arte exquisitos de Supergiant Games.</p>
+            </article>
+            
+            <article id="kingdom-come" class="game-section">
+                <h3>Kingdom Come: Deliverance II</h3>
+                <p>RPG de mundo abierto centrado en el realismo histórico. Vuelve Henry para una aventura medieval más cruda.</p>
+            </article>
+            
+        </section>
+
+        <aside id="comentarios" class="comments-section">
+            <h2>💬 Sala de Comentarios</h2>
+            <form id="comment-form">
+                <input type="text" id="comment-user" placeholder="Tu Nickname" required><br>
+                <textarea id="comment-text" placeholder="¿Cuál es tu favorito para el GOTY?" required></textarea><br>
+                <button type="submit">Enviar Mensaje</button><br>
+            </form>
+            <div id="comments-list" class="comments-list">
+                <p class="initial-comment">**DevBot:** ¡Bienvenidos a la arena! ¡Que empiece el debate! 🤖</p>
+            </div>
+        </aside>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GOTY HUB | Desarrollado con 💖 y Vanilla Code.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

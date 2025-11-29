@@ -1,0 +1,242 @@
+/* ======================================= */
+/* 1. RESET Y VARIABLES GLOBALES */
+/* ======================================= */
+:root {
+    --color-fondo-base: #121212;
+    --color-texto-principal: #f0f0f0;
+    --color-acento: #e50050; /* Un rojo vibrante para acentos */
+    --color-silksong: #6a05055e;
+    --color-expedition: #3B0352;
+    --color-death-stranding: #053345;
+    --color-donkey-kong: #FFC000;
+    --color-hades: #5D0000;
+    --color-kingdom-come: #212121;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Transición suave global para el hover y el scroll */
+    transition: all 0.3s ease-in-out; 
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-fondo-base);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+}
+
+/* ======================================= */
+/* 2. HEADER Y NAVEGACIÓN */
+/* ======================================= */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.76);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--color-acento);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-acento);
+}
+
+.main-nav a {
+    color: var(--color-texto-principal);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+}
+
+.main-nav a:hover {
+    color: var(--color-acento);
+    text-decoration: underline;
+}
+
+.login-btn {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ======================================= */
+/* 3. MODAL DE INICIO DE SESIÓN */
+/* ======================================= */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-content {
+    background-color: var(--color-fondo-base);
+    border: 2px solid var(--color-acento);
+    margin: 15% auto; 
+    padding: 30px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(229, 0, 80, 0.5); /* Efecto neón */
+}
+
+/* ... Estilos para el formulario dentro del modal ... */
+/* (Omitidos por brevedad, pero incluirían inputs, labels y el close-btn) */
+
+/* ======================================= */
+/* 4. SECCIÓN HERO Y CARRUSEL */
+/* ======================================= */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    overflow: hidden; /* Esto es clave para el carrusel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    border-radius: 50%;
+}
+.carousel-btn.prev {
+    left: 10px;
+}
+.carousel-btn.next {
+    right: 10px;
+}
+.carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 1s ease-in-out; /* La transición clave */
+}
+
+.carousel-slide.active {
+    opacity: 1; /* Slide activo */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra toda el área */
+    filter: brightness(0.5); /* Oscurece la imagen para que el texto resalte */
+}
+
+.hero-text {
+    position: relative;
+    z-index: 50;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* ======================================= */
+/* 5. SECCIONES DE JUEGOS TEMÁTICAS */
+/* ======================================= */
+.game-section {
+    padding: 50px 5%;
+    min-height: 80vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    /* La transición entre secciones */
+    transition: background-color 1s ease-in-out; 
+    border-top: 5px solid var(--color-fondo-base); 
+}
+
+.game-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15; /* El efecto difuminado */
+    z-index: -1;
+    filter: blur(5px);
+    transition: opacity 1s;
+}
+
+/* Colores y Fondos de Sección por Juego */
+
+#silksong { 
+    background-color: var(--color-silksong); 
+}
+#silksong::before {
+    background-image: url('img/bg-silksong.jpg'); /* Reemplazar con imagen real */
+}
+
+#expedition { 
+    background-color: var(--color-expedition); 
+}
+#expedition::before {
+    background-image: url('img/bg-expedition.jpg');
+}
+
+/* ... Repetir para los otros 4 juegos ... */
+/* El color de fondo y la imagen de fondo de cada sección crearán la transición */
+
+/* ======================================= */
+/* 6. CAJA DE COMENTARIOS */
+/* ======================================= */
+.comments-section {
+    background-color: var(--color-fondo-base);
+    padding: 40px 5%;
+    border-top: 5px solid var(--color-acento);
+}
+
+.comments-list {
+    margin-top: 20px;
+    border: 1px solid #333;
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto; /* Scroll para la lista de comentarios */
+}
+
+/* Estilo para el scrollbar en Webkit */
+.comments-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.comments-list::-webkit-scrollbar-thumb {
+    background: var(--color-acento);
+    border-radius: 5px;
+}
