@@ -6,10 +6,10 @@
     --color-texto-principal: #f0f0f0;
     --color-acento: #e50050; /* Un rojo vibrante para acentos */
     --color-silksong: #6a05055e;
-    --color-expedition: #3B0352;
-    --color-death-stranding: #053345;
-    --color-donkey-kong: #FFC000;
-    --color-hades: #5D0000;
+    --color-expedition: #3c03529c;
+    --color-death-stranding: #05334573;
+    --color-donkey-kong: #ffbf00ab;
+    --color-hades: #1b57458c;
     --color-kingdom-come: #212121;
 }
 
@@ -70,11 +70,37 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
+.login-btn:hover {
+    background-color: #ff7caa; 
+    color: #121212;/* Un tono más claro al hacer hover */
+}
 
 /* ======================================= */
 /* 3. MODAL DE INICIO DE SESIÓN */
 /* ======================================= */
+
+.para-llenar{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #222;
+    color: #f0f0f0;
+}
+.para-llenar:focus + label{
+    transform: translateY(-20px);
+    color: var(--color-acento);
+
+}
+.para-llenar:focus{
+    border-color: var(--color-acento);
+    outline: none;
+    box-shadow: 0 0 10px var(--color-acento);
+    outline-color: var(--color-acento) ;
+}
 .modal {
+    
     display: none; 
     position: fixed; 
     z-index: 1001;
@@ -96,6 +122,7 @@ body {
     position: relative;
     box-shadow: 0 0 20px rgba(229, 0, 80, 0.5); /* Efecto neón */
 }
+
 
 /* ... Estilos para el formulario dentro del modal ... */
 /* (Omitidos por brevedad, pero incluirían inputs, labels y el close-btn) */
@@ -124,6 +151,15 @@ body {
     font-size: 1.5rem;
     z-index: 10;
     border-radius: 50%;
+}
+.carousel-btn:hover{
+    transform: scale(1.5);
+}
+.carousel-btn.next:active{
+    transform: translate(12px)
+}
+.carousel-btn.prev:active{
+    transform: translate(12px)
 }
 .carousel-btn.prev {
     left: 10px;
@@ -170,14 +206,19 @@ body {
 /* 5. SECCIONES DE JUEGOS TEMÁTICAS */
 /* ======================================= */
 .game-section {
+    border-radius: 25px;
+    width: 80%;
+    height: 80%;
     padding: 50px 5%;
     min-height: 80vh;
     position: relative;
+    margin: 5% 10%;
     z-index: 1;
     overflow: hidden;
     /* La transición entre secciones */
     transition: background-color 1s ease-in-out; 
     border-top: 5px solid var(--color-fondo-base); 
+    text-align: center;
 }
 
 .game-section::before {
@@ -194,6 +235,9 @@ body {
     filter: blur(5px);
     transition: opacity 1s;
 }
+.game-section:hover::before {
+    opacity: 2;
+}
 
 /* Colores y Fondos de Sección por Juego */
 
@@ -203,13 +247,39 @@ body {
 #silksong::before {
     background-image: url('img/bg-silksong.jpg'); /* Reemplazar con imagen real */
 }
+#silksong:hover::before {
+    transition: 0.5s;
+    background-image: url("img/tumblr_bda8b0bd64c3aecaf4dd584d0bd70ba9_54e24034_2048.gif");
+
+}
 
 #expedition { 
     background-color: var(--color-expedition); 
 }
 #expedition::before {
-    background-image: url('img/bg-expedition.jpg');
-}
+    background-image: url('img/Clair-Obscur-1-e1746553033231.jpg');}
+
+#death-stranding-2 { 
+    background-color: var(--color-death-stranding); }
+
+#death-stranding-2::before {
+ 
+    background-image: url('img/death-stranding-2-on-the-beach-HD-1920x1080.jpeg')}; /* Reemplazar con imagen real */
+
+
+#donkey-kong { 
+    background-color: var(--color-donkey-kong);}
+#donkey-kong::before {
+    background-image: url('img/descarga.jpg'); } /* Reemplazar*/
+#hades-ii { 
+    background-color: var(--color-hades); }
+#hades-ii::before {
+    background-image: url('img/HadesIIDevUpdateSep23.webp'); } /* Reemplazar*/
+#kingdom-come { 
+    background-color: var(--color-kingdom-come); }
+#kingdom-come::before {
+    background-image: url('img/deliverance-ii.png'); } /* Reemplazar*/
+
 
 /* ... Repetir para los otros 4 juegos ... */
 /* El color de fondo y la imagen de fondo de cada sección crearán la transición */
