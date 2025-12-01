@@ -139,6 +139,9 @@ body {
     justify-content: center;
     text-align: center;
 }
+.hero-text{
+    width: 60%;
+}
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -309,4 +312,5 @@ body {
 .comments-list::-webkit-scrollbar-thumb {
     background: var(--color-acento);
     border-radius: 5px;
+
 }
