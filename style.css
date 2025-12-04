@@ -251,37 +251,59 @@ body {
     background-image: url('img/bg-silksong.jpg'); /* Reemplazar con imagen real */
 }
 #silksong:hover::before {
-    transition: 0.5s;
+    transition: 1s;
     background-image: url("img/tumblr_bda8b0bd64c3aecaf4dd584d0bd70ba9_54e24034_2048.gif");
+    transition-delay: 0.5s; 
 
+}
+#silksong:hover::after{
+    
+    transition: 1s;
+    background-image: url("img/bg-silksong.jpg");
 }
 
 #expedition { 
     background-color: var(--color-expedition); 
+
 }
+
 #expedition::before {
     background-image: url('img/Clair-Obscur-1-e1746553033231.jpg');}
+#expedition:hover::before {
+    transition: 1s;
+    background-image: url("img/expedition 33.gif");
+    transition-delay: 0.5s; }
 
 #death-stranding-2 { 
     background-color: var(--color-death-stranding); }
 
 #death-stranding-2::before {
- 
     background-image: url('img/death-stranding-2-on-the-beach-HD-1920x1080.jpeg')}; /* Reemplazar con imagen real */
-
+#death-stranding-2:hover::before {
+    transition: 1s;
+    background-image: url("img/death-2.gif");}
 
 #donkey-kong { 
     background-color: var(--color-donkey-kong);}
 #donkey-kong::before {
     background-image: url('img/descarga.jpg'); } /* Reemplazar*/
+#donkey-kong:hover::before {
+    transition: 1s;
+    background-image: url("img/aparede-kong.jpg");}
 #hades-ii { 
     background-color: var(--color-hades); }
 #hades-ii::before {
     background-image: url('img/HadesIIDevUpdateSep23.webp'); } /* Reemplazar*/
+    #hades-ii:hover::before {
+    transition: 1s;
+    background-image: url("img/ahdes.gif");}
 #kingdom-come { 
     background-color: var(--color-kingdom-come); }
 #kingdom-come::before {
     background-image: url('img/deliverance-ii.png'); } /* Reemplazar*/
+#kingdom-come:hover::before {
+    transition: 1s;
+    background-image: url("img/delili.gif");}
 
 
 /* ... Repetir para los otros 4 juegos ... */
@@ -295,13 +317,53 @@ body {
     padding: 40px 5%;
     border-top: 5px solid var(--color-acento);
 }
-
+.nickname{
+    width: 48%;
+        height: 30px;
+    resize: none;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #222;
+    color: #f0f0f0;
+}
+.nickname:focus{
+    border-color: var(--color-acento);
+    outline: none;
+    box-shadow: 0 0 10px var(--color-acento);
+    outline-color: var(--color-acento) ;
+}
+.coment {
+    width: 100%;
+    resize: none;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #222;
+    color: #f0f0f0;}
+.coment:focus{
+    border-color: var(--color-acento);
+    outline: none;
+    box-shadow: 0 0 10px var(--color-acento);}
 .comments-list {
     margin-top: 20px;
     border: 1px solid #333;
     padding: 15px;
     height: 300px;
     overflow-y: auto; /* Scroll para la lista de comentarios */
+}
+.boton_coment {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.boton_coment:hover {
+    background-color: #ff7caa; 
+    color: #121212;/* Un tono más claro al hacer hover */
 }
 
 /* Estilo para el scrollbar en Webkit */
@@ -312,5 +374,4 @@ body {
 .comments-list::-webkit-scrollbar-thumb {
     background: var(--color-acento);
     border-radius: 5px;
-
 }

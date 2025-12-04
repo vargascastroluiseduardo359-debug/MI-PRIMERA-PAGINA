@@ -84,9 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     commentForm.addEventListener('submit', (event) => {
         event.preventDefault();
-
+         let area=document.getElementById('comment-text');
         const user = document.getElementById('comment-user').value;
         const text = document.getElementById('comment-text').value;
+        area.style.resize = "none";
 
         if (user && text) {
             // Crear el nuevo elemento de comentario
